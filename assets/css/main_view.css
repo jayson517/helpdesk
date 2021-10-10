@@ -1,0 +1,79 @@
+/**
+ *  Main
+ */
+html {
+	scroll-behavior: smooth;
+}
+
+/**
+ * Navigation
+ */
+.navbar {
+	background: rgb(3,21,83);
+	background: linear-gradient(159deg, rgba(3,21,83,1) 10%, rgba(34,61,177,1) 55%, rgba(54,76,180,1) 100%);
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.navbar span h6 {
+	color: yellow;
+}
+
+.navbar img {
+	width: 60px;	
+}
+
+
+.fas {
+	font-size: 20px;
+}
+
+.sidebar {
+	height: calc(100vh - 40px);
+	width: 140px;
+	background: rgb(14,21,43);
+	background: linear-gradient(159deg, rgba(14,21,43,1) 10%, rgba(30,31,36,1) 55%, rgba(7,9,19,1) 100%);
+}
+
+.sidebar ul li {
+	color: white;
+}
+
+.sidebar ul {
+	padding-top: 50px;
+	list-style-type: none;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+
+/**
+ * Content
+ */
+.content {
+	padding-top: 100px;
+}
+
+.content table thead{
+	font-weight: bold;
+	background: rgb(35,85,111);
+background: linear-gradient(345deg, rgba(35,85,111,1) 7%, rgba(17,42,87,1) 55%, rgba(11,35,69,1) 93%);
+}
+
+.content table {
+	font-size: 12px;
+}
+
+.records {
+	height: 70px;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+/**
+ * Footer
+ */
+footer {
+	background: rgb(14,21,43);
+	background: linear-gradient(349deg, rgba(14,21,43,1) 10%, rgba(30,31,36,1) 55%, rgba(7,9,19,1) 100%);
+}

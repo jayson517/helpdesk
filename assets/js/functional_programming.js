@@ -1,4 +1,7 @@
 /**
+ * Functional Programming
+ *
+ * 
  * ================================================================================
  * Map Function
  * @type {Array}
@@ -22,5 +25,10 @@ console.log(rooms);
 console.log(newRooms);
 
 /**
- * Persistent Data Structures
+ * ================================================================================
+ * Immutable Data Structure 
+ * Trees and Sharing
+ * Structural Sharing
  */
+
+

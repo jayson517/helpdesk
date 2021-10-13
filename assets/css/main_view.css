@@ -29,7 +29,7 @@ html {
 }
 
 .sidebar {
-	height: calc(100vh - 40px);
+	height: calc(100vh - 42px);
 	width: 140px;
 	background: rgb(14,21,43);
 	background: linear-gradient(159deg, rgba(14,21,43,1) 10%, rgba(30,31,36,1) 55%, rgba(7,9,19,1) 100%);
@@ -40,6 +40,8 @@ html {
 }
 
 .sidebar ul {
+	position: absolute;
+	z-index: 1;
 	padding-top: 50px;
 	list-style-type: none;
 	padding-left: 0;
@@ -50,8 +52,12 @@ html {
 /**
  * Content
  */
+.recordsDate {
+
+}
+
 .content {
-	padding-top: 100px;
+	padding-top: 80px;
 }
 
 .content table thead{
@@ -65,9 +71,11 @@ background: linear-gradient(345deg, rgba(35,85,111,1) 7%, rgba(17,42,87,1) 55%, 
 }
 
 .records {
-	height: 70px;
+	height: 80px;
 	font-weight: bold;
 	font-size: 18px;
+	width: 170px;
+	padding-top: 5px;
 }
 
 /**

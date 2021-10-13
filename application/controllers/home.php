@@ -24,5 +24,25 @@ class Home extends CI_Controller {
 		// redirect('/','refresh');
 	}
 
+	public function phoneCall()
+	{
+		$data['type'] = "pc";
+		$this->load->view('technicalsupport/phonecalls/phonecall', $data);
+	}
+
+	public function hangouts()
+	{
+		echo "hangouts";
+	}
+
+	public function email() 
+	{
+		echo "emails";
+	}
+
+	public function walk_in()
+	{
+		echo "walk-in";
+	}
 
 }

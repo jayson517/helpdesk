@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php $this->load->view('common/header'); ?>
 <?php $this->load->view('common/nav'); ?>
 
-<div class="row">
+<div class="row main_cont">
 	<div class="col-md-1">
 		<?php $this->load->view('common/nav_left'); ?>
 	</div>

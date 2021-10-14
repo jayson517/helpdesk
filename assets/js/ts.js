@@ -13,6 +13,15 @@ $(document).ready(function(){
 		clearSearchFields();
 	});
 
+	$('.txtS, #txtFa').keypress(function (e) {
+		var key = e.which;
+		if(key == 13)  // the enter key code
+		{
+			$("#btnProceed").click();
+			return false;  
+		}
+	}); 
+
 	var base_url = $("#txtBaseUrl").val();
 	var $base_url = base_url.trim();
 

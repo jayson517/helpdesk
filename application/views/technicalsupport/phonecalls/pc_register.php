@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</li>
 					<hr>
 					<li class="en-li">
-						<a href="#" class="showEdtk"><p>Drug Test Kits</p></a>
+						<a href="#" class="showEdtk" disabled><p>Drug Test Kits</p></a>
 					</li>
 					<hr>
 					<li class="en-li">
@@ -39,6 +39,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<hr>
 					<li class="en-li">
 						<a href="#" class="viewHistory"><p>View History</p></a>
+					</li>
+					<hr>
+					<li class="en-li">
+						<?php echo anchor('/', 'Cancel', ['class'=>'btn btn-sm btn-danger']); ?>
 					</li>
 				</ul>
 		</div>

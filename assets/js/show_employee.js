@@ -9,58 +9,66 @@ $(document).ready(function(){
 	// $('.pShowEmp').css('color', '#e1e922');
 
 	activeLink('.showEmp');
+	removeHover('.showEmp');
 	
 	$('.showEmp').on("click", function(){
 		const facilityNo = $(this).attr('id');
 		get_labEmp(facilityNo);
-		deactiveLink()
 		activeLink('.showEmp');
-		removeClick('.showEmp');
+		removeHover('.showEmp');
 	});
 
 	$('.showEdtk').on("click", function(){
-		deactiveLink()
 		activeLink('.showEdtk');
-		removeClick('.showEdtk');
+		removeHover('.showEdtk');
 	});
 	
 	$('.showBio').on("click", function(){
-		deactiveLink()
 		activeLink('.showBio');
-		removeClick('.showBio');
+		removeHover('.showBio');
 	});
 
 	$('.genRco').on("click", function(){
-		deactiveLink()
 		activeLink('.genRco');
-		removeClick('.genRco');
+		removeHover('.genRco');
 	});
 	
 	$('.other').on("click", function(){
-		deactiveLink()
 		activeLink('.other');
-		removeClick('.other');
+		removeHover('.other');
 	});
 
 	$('.v2').on("click", function(){
-		deactiveLink()
 		activeLink('.v2');
-		removeClick('.v2');
+		removeHover('.v2');
 	});
 
 	$('.viewHistory').on("click", function(){
-		deactiveLink()
 		activeLink('.viewHistory');
-		removeClick('.viewHistory');
+		removeHover('.viewHistory');
 	});
 
-	function removeClick(htmlElement)
+	function removeHover(htmlElement)
 	{
+		addHover();
 		$(htmlElement).css({'pointer-events' : 'none', 'cursor' : 'default'});
+		// $(htmlElement).prop("disabled", true);
+	}
+
+	function addHover()
+	{
+		$('.showEmp').css({'pointer-events' : 'all', 'cursor' : 'pointer'});
+		$('.showEdtk').css({'pointer-events' : 'all', 'cursor' : 'pointer'});
+		$('.showBio').css({'pointer-events' : 'all', 'cursor' : 'pointer'});
+		$('.genRco').css({'pointer-events' : 'all', 'cursor' : 'pointer'});
+		$('.other').css({'pointer-events' : 'all', 'cursor' : 'pointer'});
+		$('.v2').css({'pointer-events' : 'all', 'cursor' : 'pointer'});
+		$('.viewHistory').css({'pointer-events' : 'all', 'cursor' : 'pointer'});
 	}
 
 	function activeLink(htmlElement)
 	{
+		deactiveLink();
 		$(htmlElement).css('color', 'yellow');
 	}
 

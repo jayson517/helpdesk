@@ -45,4 +45,9 @@ class Home extends CI_Controller {
 		echo "walk-in";
 	}
 
+	public function pagination()
+	{
+		$this->load->view("pagination_view");
+	}
+
 }

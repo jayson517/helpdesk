@@ -55,5 +55,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 
 </div>
-
 <?php $this->load->view('technicalsupport/common/footer'); ?>
+<?php $this->load->view('technicalsupport/phonecalls/includes/ts_pc_js'); ?>

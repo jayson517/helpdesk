@@ -1,6 +1,6 @@
-<footer class="text-center text-light">
+<!-- <footer class="text-center text-light">
 	Copyright 2021
-</footer>
+</footer> -->
 
 	<script src="<?php echo base_url('assets/js/jquery.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>

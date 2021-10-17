@@ -1,5 +1,5 @@
 /**
- * Navigation
+ * ========================== Navigation ==========================
  */
 .navbar {
 	background: rgb(3,21,83);
@@ -21,7 +21,7 @@
 }
 
 /**
- * Container
+ * ========================== Main View Container ==========================
  */
 
 .cont-info {
@@ -30,7 +30,7 @@
 }
 
 .cont-lab-info {
-	height: calc(100vh - 122px);
+	height: 80vh;
 	margin-left: 15px;
 	background: rgb(26,59,4);
 	background: linear-gradient(351deg, rgba(26,59,4,1) 7%, rgba(27,46,14,1) 55%, rgba(22,61,8,1) 86%);
@@ -60,19 +60,18 @@
 }
 
 /**
- * Phone Call
+ * ========================== Phone Call Search ==========================
  */
 .enc-pc-cont {
 	margin-top: 80px;
 }
 
 .container {
-	height: 80vh;
+	height: calc(100vh - 80px);
 	margin-left: 0;
 	padding-left: 15px;
 	background: rgb(23,28,79);
 	background: linear-gradient(351deg, rgba(23,28,79,1) 7%, rgba(11,38,74,1) 55%, rgba(9,9,74,1) 86%);
-	border-radius: 10px;
 }
 
 /*.en-li {
@@ -86,23 +85,57 @@
 	color: #ececec;
 }
 
+.en-li a {
+	color: #ececec;
+}
+
 .en-li a:hover {
 	text-decoration: none;
 	color: yellow;
 }
 
-.en-li a:active {
-	text-decoration: none;
+/*.en-li a:active {
+	text-decoration: all;
 	color: yellow;
-}
+}*/
 
 .en-li ul {
 	padding-left: 30px;
 }
 
+/**
+ * ========================== Technical Support Phone Call Registration ==========================
+ * pc_register.php
+ */
+
+.cont-pcReg-labInfo {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin: 0;
+	border: 1px solid grey;
+	text-align: center;
+	font-family: sans-serif;
+	background: rgb(201,201,203);
+background: linear-gradient(0deg, rgba(201,201,203,1) 7%, rgba(221,225,231,1) 55%, rgba(221,221,255,1) 86%);
+}
+
+.cont-pcReg-labInfo p:nth-child(1) {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.cont-pcReg-labInfo p {
+	font-size: 12px;
+}
+
+.tbl-tblRecordList {
+	font-size: 12px;
+	display: none;
+}
+
 
 /**
- * Footer
+ * ========================== Footer ==========================
  */
 footer {
 	background: rgb(14,21,43);

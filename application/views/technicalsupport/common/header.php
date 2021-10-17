@@ -7,3 +7,4 @@
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/ts.css'); ?>">
 </head>
 <body>
+	<input type="hidden" class="<?php echo base_url();?>" id="base_url">

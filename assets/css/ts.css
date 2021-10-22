@@ -67,7 +67,7 @@
 }
 
 .container {
-	height: calc(100vh - 80px);
+	height: 100vh;
 	margin-left: 0;
 	padding-left: 15px;
 	background: rgb(23,28,79);
@@ -89,7 +89,7 @@
 	color: #ececec;
 }
 
-.en-li a:hover {
+.en-li a p:hover {
 	text-decoration: none;
 	color: yellow;
 }
@@ -131,6 +131,90 @@ background: linear-gradient(0deg, rgba(201,201,203,1) 7%, rgba(221,225,231,1) 55
 .tbl-tblRecordList {
 	font-size: 12px;
 	display: none;
+	border: 2px solid black;
+}
+
+.empContSearch {
+	background: rgb(43,56,126);
+background: linear-gradient(321deg, rgba(43,56,126,1) 49%, rgba(17,62,119,1) 100%);
+}
+
+.dtkContSearch {
+	background: rgb(119,82,25);
+background: linear-gradient(342deg, rgba(119,82,25,1) 1%, rgba(161,119,55,1) 49%, rgba(68,34,8,1) 100%);
+}
+
+.cont-empTs {
+	background: rgb(33,40,78);
+background: linear-gradient(321deg, rgba(33,40,78,1) 49%, rgba(17,62,119,1) 100%);
+}
+
+.cont-dtkTs {
+	background: rgb(77,55,29);
+background: linear-gradient(132deg, rgba(77,55,29,1) 1%, rgba(142,104,16,1) 100%);
+}
+
+.cont-bioTs {
+	background: rgb(26,101,94);
+background: linear-gradient(325deg, rgba(26,101,94,1) 49%, rgba(11,74,71,1) 100%);
+}
+
+.cont-rcoTs {
+	background: rgb(43,55,64);
+background: linear-gradient(141deg, rgba(43,55,64,1) 49%, rgba(46,68,54,1) 100%);
+}
+
+.cont-othersTs {
+	background: rgb(101,54,72);
+background: linear-gradient(141deg, rgba(101,54,72,1) 49%, rgba(70,41,62,1) 100%);
+}
+
+.cont-v2Ts {
+	background: rgb(41,91,71);
+background: linear-gradient(321deg, rgba(41,91,71,1) 49%, rgba(51,113,77,1) 100%);
+}
+
+.dtkContSearch,
+.empContSearch,
+.cont-empTs,
+.cont-dtkTs,
+.cont-bioTs,
+.cont-rcoTs,
+.cont-othersTs,
+.cont-v2Ts{
+	display: none;
+	padding: 0px 10px 5px 10px;
+}
+
+.cont-tsQa select {
+	width: 100%;
+	overflow-x: auto;
+	font-size: 13px;
+}
+
+.cont-tsQa p,
+.cont-tsManual p {
+	color: yellow;
+	font-size: 12px;
+}
+
+.cont-capBio label {
+	font-size: 13px;
+	color: yellow;
+}
+
+.cont-capBio input {
+	font-size: 12px;
+	height: 25px;
+}
+
+.cont-capBio input[type="date"] {
+	font-size: 12px;
+	width: 150px;
+}
+
+.btnBioSearch {
+	width: 150px;
 }
 
 

@@ -78,6 +78,31 @@ class Technicalsupport_model extends CI_Model
 		}
 	}
 
+	function view_all_kits($data){
+		$this->db 	->select('dtkregno, dtkregdt, dtkregstat, downloadedby, downloadeddt')
+			 		->from('dtk_register')
+			 		->where($data)
+					->order_by('dtkregdt', 'desc');
+
+			if($query = $this->db->get()->result()){
+				return $query;
+
+			}else{
+				// $this->db->select()
+				// 	->from('dtk_register')
+				// 	->where($data);
+
+				// if($central_db->get()->num_rows() == 0){
+				// 	return "No DTK Records Found";
+				// }else{
+				// 	return "Contact Admin";					
+				// }
+				
+				return "NR";
+			}
+
+	}
+
 
 }
 

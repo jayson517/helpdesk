@@ -1,12 +1,12 @@
 <?php 
 	$userLogin = "J.Soria";
-	$type = "Phone Call";
- ?>
+
+?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 		<img src="<?php echo base_url('assets/img/main_page/logo.png'); ?>" alt="">
 		<span class="navbar-brand pl-4 text-center"><h6>Department of Health</h6><h5>IDTOMIS HELPDESK</h5></span>
 		<div class="container-fluid justify-content-center pt-4">
-			<h5><?php echo $type; ?></h5>
+			 <h5 class="hTsType"><?php echo $this->session->userdata('tsType');  ?></h5>
 		</div>
 		<ul class="navbar-nav ml-auto mr-5">
 			<li class="nav-item ml-5">

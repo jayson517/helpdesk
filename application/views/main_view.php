@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="col-md-1">
 		<?php $this->load->view('common/nav_left'); ?>
 	</div>
-	<div class="container-fluid col-md-11 content pl-5">
+	<div class="container-fluid col-md-11 content pl-5 cont-mainDash">
 		<p class="text-muted">Dashboard</p>
 		<div class="row justify-content-md-center">
 			<div class="col-md-3 p-0 input-group">
@@ -117,6 +117,146 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<td>Lorem ipsum dolor sit amet.</td>
 				</tr>	
 		</table>
+	</div>
+	<div class="container-fluid col-md-11 content pl-5 cont-viewLogs">
+		<table class="table table-sm table-hovered " style="overflow-x: auto;">
+			<thead>
+				<tr>
+					<th>Options</th>
+					<th>Started</th>
+					<th>Finished</th>
+					<th>Name of Laboratory</th>
+					<th>Support Type</th>
+					<th>Concerns / Queries</th>
+					<th>Actions Taken</th>
+					<th>Remarks</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Lorem ipsum.</td>
+					<td>Lorem ipsum dolor sit amet.</td>
+					<td>Lorem ipsum dolor sit.</td>
+					<td>Lorem ipsum dolor sit amet, consectetur.</td>
+					<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, laudantium.</td>
+					<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, commodi.</td>
+					<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, deserunt.</td>
+					<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, ducimus.</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="container-fluid col-md-11 pl-5 cont-genReport">
+		<div class="container cont-search-genReport p-2" >
+			<div class="row">
+				<div class="col-md-3">
+				<div class="input-group">
+				<div class="input-group-prepend">
+				<span class="input-group-text bg-info" style="height: 30px; font-size: 14px; color: #ecececec;">From</span>
+				</div>
+				<input type="date" class="form-control input-dtStarted" id="input-dtStarted" style="height: 30px; font-size: 14px;">
+				</div>
+				</div>
+				<div class="col-md-3">
+				<div class="input-group mb-3 ">
+				<div class="input-group-prepend">
+				<span class="input-group-text bg-warning" style="height: 30px; font-size: 14px;">To</span>
+				</div>
+				<input type="date" class="form-control input-dtFinished" id="input-dtFinished" style="height: 30px; font-size: 14px;">
+				</div>
+				</div>
+				<div class="col-md-6"></div>
+			</div>
+			<div class="container input-group">
+				<div class="container">
+					<label for=""><input class="checkbox" type="checkbox" style="transform: scale(1.5); "> &nbsp;Age</label>
+				</div>
+				<div class="container">
+					<label for=""><input class="checkbox" type="checkbox" style="transform: scale(1.5); "> &nbsp;Barangay</label>
+				</div>
+				<div class="container">
+					<label for=""><input class="checkbox" type="checkbox" style="transform: scale(1.5); "> &nbsp;City/Municipality</label>
+				</div>
+				<div class="container">
+					<label for=""><input class="checkbox" type="checkbox" style="transform: scale(1.5); "> &nbsp;Province</label>
+				</div>
+
+				<div class="col-md-4">
+					<p class="m-0 p-0">Type of Sectors</p>
+					<div class="container">
+						<label for=""><input type="radio" name="sectorType" style="transform: scale(1.5);">&nbsp;Public Sectors</label>
+					</div>
+					<div class="container">
+						<label for=""><input type="radio" name="sectorType" style="transform: scale(1.5);">&nbsp;Private Sectors</label>
+					</div>
+					<div class="container">
+						<label for=""><input type="radio" name="sectorType" style="transform: scale(1.5);">&nbsp;Free Standing (Per Company)</label>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<p class="m-0 p-0">Selections</p>
+					<select class="custom-select" name="" id="" size="5" style="width: 100%;">
+						<option value="">Deped</option>
+						<option value="">DOH</option>
+						<option value="">DOH</option>
+						<option value="">Private Ito</option>
+					</select>
+				</div>
+				
+				<div>
+					<button class="btn btn-sm btn-primary btn-search-genReport" style="width: 150px;">Search</button>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="container  text-center">
+			<table class="table table-bordered table-striped table-hovered table-genReport">
+				<thead class="table table-success">
+					<tr>
+						<th colspan = "5">Reported By Total Screened Positive</th>
+					</tr>
+					<tr>
+						<th rowspan = "2">Region</th>
+						<th colspan = "4">Screened Positive</th>
+					</tr>
+					<tr>
+						<th colspan = "2">2020</th>
+						<th colspan = "2">2021</th>
+					</tr>
+					<tr>
+						<th></th>
+						<th>Male</th>
+						<th>Female</th>
+						<th>Male</th>
+						<th>Female</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td>1</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div class="container-fluid col-md-11 content pl-5 cont-webApi">
+		
 	</div>
 </div>
 

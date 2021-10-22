@@ -17,13 +17,11 @@ $(document).ready(function(){
 		let accreno = $("#txtAccreno").val();
 		let fa = $("#txtFa").val();
 
-		console.log(fa);
-
 		let postData = {
 			facilityName : fn,
 			facilityNo : fno,
 			accreNo : accreno,
-			adr : fa	
+			adr : fa
 		}
 
 		$.ajax({

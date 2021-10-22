@@ -106,7 +106,14 @@ class Technicalsupport extends CI_Controller
 			$this->load->model('technicalsupport_model');
 			if($data['results'] = $this->technicalsupport_model->getLabDetails($data_input))
 			{
-				$this->load->view('technicalsupport/phonecalls/pc_register', $data);	
+				if($this->session->userdata('tsType') == "Phone Call")
+				{
+					$this->load->view('technicalsupport/phonecalls/pc_register', $data);	
+				}
+				else
+				{
+					$this->load->view('technicalsupport/hangEmailWalk/hew_register', $data);
+				}
 			}
 		}
 		else
@@ -145,6 +152,35 @@ class Technicalsupport extends CI_Controller
 		}else{
 			show_404();
 		}
+	}
+
+/**
+ * ============================== Get DTK ==============================
+ */	
+
+	public function get_dtkRecords()
+	{
+		$facilityNo = $this->input->post('facilityNo');
+		$dtkregstat = "vld";
+
+		$data_input = array(
+			'facilityNo'	=>	$facilityNo,
+			'dtkregstat'		=>	$dtkregstat
+		);
+
+		if($data_input)
+		{
+			$this->load->model('technicalsupport_model');
+			if($data_result = $this->technicalsupport_model->view_all_kits($data_input))
+			{
+				$data_result = array(
+					'result'	=>	$data_result,
+					'reponse'	=>	"success"
+				);
+			}
+		}
+
+		echo json_encode($data_result);
 	}
 
 

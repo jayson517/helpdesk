@@ -26,28 +26,38 @@ class Home extends CI_Controller {
 
 	public function phoneCall()
 	{
-		$data['type'] = "pc";
-		$this->load->view('technicalsupport/phonecalls/phonecall', $data);
+		$this->session->set_userdata("tsType", "Phone Call");
+		$this->load->view('technicalsupport/phonecalls/phonecall');
 	}
 
 	public function hangouts()
 	{
-		echo "hangouts";
+		$this->session->set_userdata("tsType", "Hangouts");
+		$this->load->view('technicalsupport/hangEmailWalk/hangEmailWalk_main');
 	}
 
 	public function email() 
 	{
-		echo "emails";
+		$this->session->set_userdata("tsType", "Email");
+		$this->load->view('technicalsupport/hangEmailWalk/hangEmailWalk_main');
 	}
 
 	public function walk_in()
 	{
-		echo "walk-in";
+		$this->session->set_userdata("tsType", "Walk-in");
+		$this->load->view('technicalsupport/hangEmailWalk/hangEmailWalk_main');
 	}
 
 	public function pagination()
 	{
 		$this->load->view("pagination_view");
 	}
+
+	public function des_ts_sess()
+	{
+		$this->session->unset_userdata('tsType');
+		$this->load->view('main_view');
+	}
+
 
 }

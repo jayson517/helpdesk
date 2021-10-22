@@ -10,18 +10,16 @@ $(document).ready(function(){
 	get_LabEmpRecords(fn);
 
 	activeLink('.showEmp');
-	toggleSearch('.empContSearch');
-	showTsQa('.cont-empTs');
-	setBtnManualId('.showEmp');
+	// showTsQa('.cont-empTs');
+	// setBtnManualId('.showEmp');
 
 	$('.showEmp').on("click", function(){
 		const facilityNo = $(this).attr('id');
 
 		activeLink('.showEmp');
-		toggleSearch('.empContSearch');
 
-		showTsQa('.cont-empTs');
-		setBtnManualId('.showEmp');
+		// showTsQa('.cont-empTs');
+		// setBtnManualId('.showEmp');
 
 		get_LabEmpRecords(facilityNo);
 	});
@@ -31,10 +29,10 @@ $(document).ready(function(){
 		const dtkregstat = "VLD";
 
 		activeLink('.showDtk');
-		toggleSearch('.dtkContSearch');
 
-		showTsQa('.cont-dtkTs');
-		setBtnManualId('.showDtk');
+
+		// showTsQa('.cont-dtkTs');
+		// setBtnManualId('.showDtk');
 
 		get_labDtkRecords(facilityNo, dtkregstat);
 
@@ -42,37 +40,32 @@ $(document).ready(function(){
 	
 	$('.showBio').on("click", function(){
 		activeLink('.showBio');
-		toggleSearch('.showBio');
-		showTsQa('.cont-bioTs');
-		setBtnManualId('.showBio');
+		// showTsQa('.cont-bioTs');
+		// setBtnManualId('.showBio');
 	});
 
 	$('.genRco').on("click", function(){
 		activeLink('.genRco');
-		toggleSearch('.genRco');
-		showTsQa('.cont-rcoTs');
-		setBtnManualId('.genRco');
+		// showTsQa('.cont-rcoTs');
+		// setBtnManualId('.genRco');
 	});
 	
 	$('.other').on("click", function(){
 		activeLink('.other');
-		toggleSearch('.other');
-		showTsQa('.cont-othersTs');
-		setBtnManualId('.other');
+		// showTsQa('.cont-othersTs');
+		// setBtnManualId('.other');
 	});
 
 	$('.v2').on("click", function(){
 		activeLink('.v2');
-		toggleSearch('.viewHistory');
-		showTsQa('.cont-v2Ts');
-		setBtnManualId('.v2');
+		// showTsQa('.cont-v2Ts');
+		// setBtnManualId('.v2');
 	});
 
 	$('.viewHistory').on("click", function(){
 		activeLink('.viewHistory');
-		toggleSearch('.viewHistory');
-		showTsQa('.viewHistory');
-		setBtnManualId('.viewHistory');
+		// showTsQa('.viewHistory');
+		// setBtnManualId('.viewHistory');
 	});
 
 /**
@@ -93,8 +86,79 @@ $(document).ready(function(){
  	});
 
 
- 	function setBtnManualId(htmlElement)
+
+/**
+ * ========================== Functions ===============================
+ */
+
+	function activeLink(htmlElement)
+	{
+		let newElement = "";
+		let table_data = $('.tbl-tblRecordList');
+
+		// setContManualId(htmlElement);
+
+		showTsQa(htmlElement);
+
+		const arrLists = [
+			{name : '.showEmp', 	newId : 'showEmp', 	cont : '.cont-empTs'},
+			{name : '.showDtk',  	newId : 'showDtk', 	cont : '.cont-dtkTs'},
+			{name : '.showBio',  	newId : 'showBio', 	cont : '.cont-bioTs'},
+			{name : '.genRco',  	newId : 'genRco', 	cont : '.cont-rcoTs'},
+			{name : '.other',  		newId : 'other', 	cont : '.cont-othersTs'},
+			{name : '.v2',  		newId : 'v2', 		cont : '.cont-v2Ts'},
+			{name : '.viewHistory',	newId : 'viewHistory'}
+		];
+
+		const arrSearch = [
+			{name: '.showDtk', 	value : '.dtkContSearch'},
+			{name : '.showEmp',	value : '.empContSearch'}
+		];
+
+		arrLists.reduce((acc, element) => {
+			if(element.name == htmlElement)
+			{
+				arrSearch.reduce((acc, itemSearch) =>{
+					if(element.name == itemSearch.name)
+					{
+						$(itemSearch.value).slideDown();
+					}
+					else
+					{
+						$(itemSearch.value).slideUp();
+					}
+				}, {});
+				
+				// $(element.cont).slideDown("slow");
+
+				table_data.empty();
+				return newElement = element.name;
+
+			}
+			else
+			{
+				$(element.name).css({
+					'color': '#ececec',
+					'pointer-events' : 'all', 
+					'cursor' : 'pointer'
+				});
+
+				// $(element.cont).slideUp();
+			}
+		}, {});
+
+		$(newElement).css({
+			'color' : 'yellow',
+			'pointer-events' : 'none', 
+			'cursor' : 'default'
+		});
+	}
+
+
+ 	function setContManualId(htmlElement)
  	{
+
+ 		// checkContManualId(htmlElement)
 
  		const arrLists = [
  			{name : '.showEmp', newId : 'showEmp'},
@@ -118,102 +182,54 @@ $(document).ready(function(){
 
  				$(".btn-tsManual").attr("id", element.newId);
  			}
- 		});
+ 		}, {});
  	}
 
+ 	function checkContManualId(htmlElement)
+ 	{
+ 		let btnAttrib = $(".btn-tsManual").attr("id");
 
+  		const arrLists = [
+ 			{name : '.showEmp', newId : 'showEmp'},
+			{name : '.showDtk',  newId : 'showDtk'},
+			{name : '.showBio',  newId : 'showBio'},
+			{name : '.genRco',  newId : 'genRco'},
+			{name : '.other',  newId : 'other'},
+			{name : '.v2',  newId : 'v2'},
+			{name : '.viewHistory',  newId : 'viewHistory'}
+ 		];		
 
-/**
- * ========================== Functions ===============================
- */
-
-	function toggleSearch(htmlElement)
-	{
-		let newElement = "";
-
-		let toggleContent = [
-				'.dtkContSearch',
-				'.empContSearch'
-			];
-
-		toggleContent.reduce((acc, element) => {
-			if(!(element == htmlElement))
-			{
-				$(element).slideUp("slow");
-				console.log("slideup" + element);
-			}
-			else if(element == htmlElement)
-			{
-				return newElement = element;
-			}
-
-		}, {});
-
-		$(newElement).slideDown("slow");
-	}
-
-
-	function activeLink(htmlElement)
-	{
-		let newElement = "";
-		let table_data = $('.tbl-tblRecordList');
-
-		const hideContent = [
-			'.showEmp',
-			'.showDtk',
-			'.showBio',
-			'.genRco',
-			'.other',
-			'.v2',
-			'.viewHistory'
-		];
-
-		hideContent.reduce((acc, element) => {
-			if(!(element == htmlElement))
-			{
-				$(element).css({
-					'color': '#ececec',
-					'pointer-events' : 'all', 
-					'cursor' : 'pointer'
-				});
-			}
-			else
-			{
-				table_data.empty();
-				return newElement = element;
-			}
-		}, {});
-
-		$(newElement).css({
-			'color' : 'yellow',
-			'pointer-events' : 'none', 
-			'cursor' : 'default'
-		});
-	}
-
+ 		arrLists.reduce((acc, element) => {
+ 			if(!(element.newId == btnAttrib))
+ 			{
+ 				$(".cont-tsManual").slideUp("slow");
+ 			}
+ 		});
+ 	}
 
 
 	function showTsQa(htmlElement)
 	{
 		let showElement = "";
 
-		let hideContent = [
-			'.cont-empTs',
-			'.cont-dtkTs',
-			'.cont-bioTs',
-			'.cont-rcoTs',
-			'.cont-othersTs',
-			'.cont-v2Ts'
+		let arrLists = [
+			{name : '.showEmp', 	cont : '.cont-empTs'},
+			{name : '.showDtk',  	cont : '.cont-dtkTs'},
+			{name : '.showBio',  	cont : '.cont-bioTs'},
+			{name : '.genRco',  	cont : '.cont-rcoTs'},
+			{name : '.other',  		cont : '.cont-othersTs'},
+			{name : '.v2',  		cont : '.cont-v2Ts'},
+			{name : '.viewHistory',	newId : 'viewHistory'}
 		];
 
-		hideContent.reduce((acc, element) => {
-			if(!(element == htmlElement))
+		arrLists.reduce((acc, element) => {
+			if(!(element.name == htmlElement))
 			{
-				$(element).slideUp();
+				$(element.cont).slideUp();
 			}
-			else if(element == htmlElement)
+			else if(element.name == htmlElement)
 			{
-				return showElement = element;
+				return showElement = element.cont;
 			}
 			
 		},{});

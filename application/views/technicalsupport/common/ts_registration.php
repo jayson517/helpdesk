@@ -47,6 +47,10 @@
 	<div class="container-liquid cont-v2Ts">
 		<?php $this->load->view('technicalsupport/common/ts_qa'); ?>
 	</div>
+
+	<div class="container-liquid">
+		<?php $this->load->view('technicalsupport/common/ts_viewHistory'); ?>
+	</div>
 </div>
 
 <div class="cont-tblRecordList" id="recordLists">

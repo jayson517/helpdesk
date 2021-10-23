@@ -55,7 +55,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</li>
 					<hr>
 					<li class="en-li">
-						<a href="#" class="viewHistory"><p>View History</p></a>
+						<a href="#" class="viewHistory" data-toggle="modal" data-target="#exampleModal"><p>View History</p></a>
 					</li>
 					<hr>
 					<li class="en-li">

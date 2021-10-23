@@ -10,17 +10,11 @@ $(document).ready(function(){
 	get_LabEmpRecords(fn);
 
 	activeLink('.showEmp');
-	// showTsQa('.cont-empTs');
-	// setBtnManualId('.showEmp');
 
 	$('.showEmp').on("click", function(){
 		const facilityNo = $(this).attr('id');
 
 		activeLink('.showEmp');
-
-		// showTsQa('.cont-empTs');
-		// setBtnManualId('.showEmp');
-
 		get_LabEmpRecords(facilityNo);
 	});
 
@@ -30,42 +24,24 @@ $(document).ready(function(){
 
 		activeLink('.showDtk');
 
-
-		// showTsQa('.cont-dtkTs');
-		// setBtnManualId('.showDtk');
-
 		get_labDtkRecords(facilityNo, dtkregstat);
 
 	});
 	
 	$('.showBio').on("click", function(){
 		activeLink('.showBio');
-		// showTsQa('.cont-bioTs');
-		// setBtnManualId('.showBio');
 	});
 
 	$('.genRco').on("click", function(){
 		activeLink('.genRco');
-		// showTsQa('.cont-rcoTs');
-		// setBtnManualId('.genRco');
 	});
 	
 	$('.other').on("click", function(){
 		activeLink('.other');
-		// showTsQa('.cont-othersTs');
-		// setBtnManualId('.other');
 	});
 
 	$('.v2').on("click", function(){
 		activeLink('.v2');
-		// showTsQa('.cont-v2Ts');
-		// setBtnManualId('.v2');
-	});
-
-	$('.viewHistory').on("click", function(){
-		activeLink('.viewHistory');
-		// showTsQa('.viewHistory');
-		// setBtnManualId('.viewHistory');
 	});
 
 /**
@@ -96,7 +72,7 @@ $(document).ready(function(){
 		let newElement = "";
 		let table_data = $('.tbl-tblRecordList');
 
-		// setContManualId(htmlElement);
+		setContManualId(htmlElement);
 
 		showTsQa(htmlElement);
 
@@ -106,8 +82,7 @@ $(document).ready(function(){
 			{name : '.showBio',  	newId : 'showBio', 	cont : '.cont-bioTs'},
 			{name : '.genRco',  	newId : 'genRco', 	cont : '.cont-rcoTs'},
 			{name : '.other',  		newId : 'other', 	cont : '.cont-othersTs'},
-			{name : '.v2',  		newId : 'v2', 		cont : '.cont-v2Ts'},
-			{name : '.viewHistory',	newId : 'viewHistory'}
+			{name : '.v2',  		newId : 'v2', 		cont : '.cont-v2Ts'}
 		];
 
 		const arrSearch = [
@@ -129,8 +104,6 @@ $(document).ready(function(){
 					}
 				}, {});
 				
-				// $(element.cont).slideDown("slow");
-
 				table_data.empty();
 				return newElement = element.name;
 
@@ -142,8 +115,6 @@ $(document).ready(function(){
 					'pointer-events' : 'all', 
 					'cursor' : 'pointer'
 				});
-
-				// $(element.cont).slideUp();
 			}
 		}, {});
 
@@ -158,7 +129,7 @@ $(document).ready(function(){
  	function setContManualId(htmlElement)
  	{
 
- 		// checkContManualId(htmlElement)
+ 		checkContManualId(htmlElement)
 
  		const arrLists = [
  			{name : '.showEmp', newId : 'showEmp'},
@@ -166,16 +137,12 @@ $(document).ready(function(){
 			{name : '.showBio',  newId : 'showBio'},
 			{name : '.genRco',  newId : 'genRco'},
 			{name : '.other',  newId : 'other'},
-			{name : '.v2',  newId : 'v2'},
-			{name : '.viewHistory',  newId : 'viewHistory'}
+			{name : '.v2',  newId : 'v2'}
  		];
 
  		arrLists.reduce((acc, element) => {
  			if(element.name == htmlElement)
  			{
-		 		$(".cont-tsManual").slideUp("slow");
-		 		$(".cont-tsQa").slideDown("slow");
-
 		 		$(".cont-tsManual").removeAttr("id");
 		 		$(".txtarea-query-tsManual").val('');
 				$(".txtarea-action-tsManual").val('');
@@ -195,16 +162,19 @@ $(document).ready(function(){
 			{name : '.showBio',  newId : 'showBio'},
 			{name : '.genRco',  newId : 'genRco'},
 			{name : '.other',  newId : 'other'},
-			{name : '.v2',  newId : 'v2'},
-			{name : '.viewHistory',  newId : 'viewHistory'}
+			{name : '.v2',  newId : 'v2'}
  		];		
 
  		arrLists.reduce((acc, element) => {
- 			if(!(element.newId == btnAttrib))
+ 			if(element.newId == btnAttrib)
  			{
- 				$(".cont-tsManual").slideUp("slow");
+ 				$(".cont-tsManual").slideUp(function(){
+	 				$(".cont-tsQa").slideDown("slow");
+ 
+ 				});
  			}
- 		});
+
+ 		}, {});
  	}
 
 
@@ -218,8 +188,7 @@ $(document).ready(function(){
 			{name : '.showBio',  	cont : '.cont-bioTs'},
 			{name : '.genRco',  	cont : '.cont-rcoTs'},
 			{name : '.other',  		cont : '.cont-othersTs'},
-			{name : '.v2',  		cont : '.cont-v2Ts'},
-			{name : '.viewHistory',	newId : 'viewHistory'}
+			{name : '.v2',  		cont : '.cont-v2Ts'}
 		];
 
 		arrLists.reduce((acc, element) => {
